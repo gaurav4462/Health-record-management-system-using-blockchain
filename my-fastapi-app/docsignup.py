@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Form, HTTPException
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
-from twilio.rest import Client
+
 import random
 import time
 from pydantic import BaseModel, EmailStr
@@ -73,20 +73,7 @@ def generate_otp() -> str:
     """Generate a 6-digit OTP."""
     return str(random.randint(100000, 999999))
 
-#send OTP via Twilio SMS
-def send_otp_via_twilio(phone_number: str):
-    try:
-        generated_otp = generate_otp()
-        global otp_to_compare
-        otp_to_compare = generated_otp
 
-        global time_to_compare
-        time_to_compare = time.time()
-
-        
-        return {"message": "OTP sent", "otp": generated_otp}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to send OTP: {str(e)}")
 
 def verify_otp(otp: str):
     current_time = time.time()
@@ -104,7 +91,7 @@ def check_government_id(id_check: GovernmentIDCheck, db: Session = Depends(get_d
 
     if db_entry:
         phone_number = db_entry.phone_number
-        send_status = send_otp_via_twilio(phone_number)
+
         return {"message": "OTP sent", "otp_status": send_status, "phone_number": phone_number}
     else:
         raise HTTPException(status_code=404, detail="ID does not match or not found")
