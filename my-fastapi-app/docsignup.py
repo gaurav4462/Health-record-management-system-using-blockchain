@@ -83,12 +83,7 @@ def send_otp_via_twilio(phone_number: str):
         global time_to_compare
         time_to_compare = time.time()
 
-        message = twilio_client.messages.create(
-            body=f"Your verification code is {generated_otp}",
-            from_=TWILIO_PHONE_NUMBER,
-            to=phone_number
-        )
-
+        
         return {"message": "OTP sent", "otp": generated_otp}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to send OTP: {str(e)}")
