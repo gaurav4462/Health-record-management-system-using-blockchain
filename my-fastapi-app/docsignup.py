@@ -8,8 +8,6 @@ import time
 from pydantic import BaseModel, EmailStr
 
 
-twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-
 # Database URL
 SQLALCHEMY_DATABASE_URL = "postgresql://postgres:gaurav76@localhost/doc_gov_id"
 
