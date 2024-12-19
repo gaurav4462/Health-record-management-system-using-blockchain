@@ -92,7 +92,7 @@ def check_government_id(id_check: GovernmentIDCheck, db: Session = Depends(get_d
     if db_entry:
         phone_number = db_entry.phone_number
 
-        return {"message": "OTP sent", "otp_status": send_status, "phone_number": phone_number}
+        
     else:
         raise HTTPException(status_code=404, detail="ID does not match or not found")
 
