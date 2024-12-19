@@ -1,0 +1,15 @@
+.signup-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.btn-signup-option {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

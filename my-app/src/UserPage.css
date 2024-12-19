@@ -1,0 +1,300 @@
+/* Add this to your UserPage.css */
+/* Container for the remarks box */
+.remarks-container {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000; /* Ensure the box stays on top */
+    animation: fadeIn 0.3s ease;
+}
+
+/* Animation for fading in the remarks box */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header of the remarks box */
+.remarks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Close button */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #3498db;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Styling for remarks sections */
+.remarks-section {
+    margin-top: 15px;
+}
+
+.remarks-section p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* Optional: Add a small margin between the remarks container and other content */
+.dashboard-container {
+    margin-right: 320px; /* Account for the width of the remarks box */
+}
+
+/* Container for the entire dashboard */
+.dashboard-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f4f7fc;
+}
+
+
+
+
+
+/* Card-style for user information */
+.user-info-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.user-info-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.user-details p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.user-details strong {
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* Doctor cards container */
+.doctor-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.doctor-card {
+    background-color: #ffffff;
+    width: calc(33.33% - 20px);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.doctor-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.doctor-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.doctor-card p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.files-list {
+    margin-top: 20px;
+}
+
+/* Files container styling */
+.files-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.file-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e1e9f2;
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.file-card:hover {
+    background-color: #f7f9fc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.file-card p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.file-card a {
+    color: #3498db;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.file-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .doctor-card {
+        width: calc(50% - 20px); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-card {
+        width: 100%; /* Full width on mobile screens */
+    }
+
+    .file-card {
+        width: 100%; /* Full width for file cards on mobile */
+    }
+}
+
+/* Additional Styles for Doctor Card Actions and Icons */
+.doctor-card {
+    position: relative; /* Make sure the card is positioned relative for absolute positioning of icons */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-card-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.doctor-card-action-icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.doctor-card-action-icon:hover {
+    transform: scale(1.2);
+}
+
+/* New styles for Navbar Notification Button and Remarks Section */
+
+/* Adjust navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* Space between links and profile section */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+/* Keep profile section to the right */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-left: auto;  /* Align to the far right */
+}
+
+.profile button {
+    background-color: transparent;
+    border: none;
+    color: #3498db;
+    font-size: 16px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Notification icon (to the left of profile icon) */
+.notification-btn {
+    cursor: pointer;
+    margin-right: 15px; /* Space between notification and profile */
+    position: relative;
+}
+
+/* Adjusting notification dot */
+.notification-btn .notification-dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.notification-btn:hover {
+    opacity: 0.8;
+}
+
+/* Remarks container styling */
+.remarks-container {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 250px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.remarks-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.remarks-section {
+    margin-bottom: 10px;
+}
+
+.remarks-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}

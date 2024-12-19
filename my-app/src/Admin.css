@@ -1,0 +1,44 @@
+.admin-container {
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .dropdown-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .dropdown-block {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  
+  select {
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .add-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-btn:hover {
+    background-color: #45a049;
+  }
+  
+  p {
+    color: red;
+    text-align: center;
+  }
+  
