@@ -7,9 +7,6 @@ import random
 import time
 from pydantic import BaseModel, EmailStr
 
-TWILIO_ACCOUNT_SID = 'add TWILIO_ACCOUNT_SID'
-TWILIO_AUTH_TOKEN = 'add TWILIO_AUTH_TOKEN'
-TWILIO_PHONE_NUMBER = ''
 
 twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
