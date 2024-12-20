@@ -26,7 +26,7 @@ otp_to_compare = 0
 
 # Define the database models
 class RegistrationGovernmentID(Base):
-    __tablename__ = 'registration_government_ids'
+    _tablename_ = 'registration_government_ids'
 
     gov_id = Column(String, primary_key=True, index=True)
     name = Column(String)
@@ -35,7 +35,7 @@ class RegistrationGovernmentID(Base):
     phone_number = Column(String)
 
 class User(Base):
-    __tablename__ = 'users'
+    _tablename_ = 'users'
 
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
@@ -124,3 +124,4 @@ def check_government_id(id_check: GovernmentIDCheck, db: Session = Depends(get_d
 def verify_otp_endpoint(otp: str = Form()):
     verification_status = verify_otp(otp)
     return {"message": verification_status}
+    
